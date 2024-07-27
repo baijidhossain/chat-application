@@ -191,9 +191,6 @@ $thread = getData($mysql_result);
     $(".send-message").click(function() {
 
 
-      alert($(".thread").data("selected-thread").data('thread-name'))
-
-
       var message = $("#message").val();
 
       var thread_id = $(".thread").data("selected-thread");
@@ -204,7 +201,6 @@ $thread = getData($mysql_result);
         url: "<?= $APP_URL  ?>/chatbox/message_send.php",
         method: "POST",
         data: {
-          thread_id: thread_id,
           user_id: user_id,
           message: message
         },
@@ -224,9 +220,9 @@ $thread = getData($mysql_result);
 
     })
 
-    setInterval(function() {
-      getMessages()
-    }, 500)
+    // setInterval(function() {
+    //   getMessages()
+    // }, 500)
 
 
     function getMessages() {

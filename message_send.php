@@ -6,13 +6,13 @@ if (empty($_SESSION['login'])) {
   die();
 }
 
-$thread_id = $_POST['thread_id'];
+
 
 $user_id = $_POST['user_id'];
 
 $message = $_POST['message'];
 
-$sql = "INSERT INTO `message`( `content`, `thread_id`, `sender_id`) VALUES ('" . $message . "','" . $thread_id . "','" . $user_id . "')";
+$sql = "INSERT INTO `message`( `message`, `sender_id`) VALUES ('" . $message . "','" . $user_id . "')";
 
 $send_message =   mysqli_query($conn, $sql);
 
